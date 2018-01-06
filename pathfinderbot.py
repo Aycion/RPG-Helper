@@ -34,6 +34,7 @@ def get_last_update_id(updates):
     return max(update_ids)
 
 
+# @Deprecated
 def get_last_chat_id_and_text(updates):
     num_updates = len(updates["result"])
     last_update = num_updates - 1
