@@ -17,7 +17,7 @@ end
 
 def get_json_from_url(url)
   content = get_url(url)
-  JSON.parse content, symbolize_names: true
+  JSON.parse(content, symbolize_names: true)
 end
 
 def get_updates(offset=nil)
@@ -37,7 +37,7 @@ def get_last_update_id(updates)
 end
 
 def send_message(text, chat_id)
-   text = URI.encode(text)
+   text = URI.parse(URI.encode(text))
    url = URL + "sendMessage?text=#{text}&chat_id=#{chat_id}"
    get_url(url)
 end
